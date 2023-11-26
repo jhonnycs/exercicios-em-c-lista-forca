@@ -6,28 +6,22 @@
 
 /*
     Melhorias a serem feitas no jogo:
-    Marcarei as melhorias já feitas com um -------------------------- abaixo
 
     1) Não permitir que o usuário digite nada além de letras maiúsculas. Dica:
         Imprima a letra ‘A’ e a letra ‘Z’ como inteiros (usando %d) e descubra seus
         números. Em seguida, faça um if proibindo o caractere digitado de ser fora
         desse intervalo.
-        --------------------------
 
     2) Não permitir que o usuário insira uma palavra que já exista no arquivo de
         palavras.
-        --------------------------
 
     3) Só possibilitar a inserção de uma nova palavra caso o jogador ganhe o jogo.
-        --------------------------
 
     4) Pergunte ao usuário o nível de dificuldade que ele quer jogar. De acordo
         com o nível, você tem mais ou menos chutes.
-        --------------------------
 
-    7) Ao final do jogo, pergunte o nome do usuário e salve-o em um arquivo
+    5) Ao final do jogo, pergunte o nome do usuário e salve-o em um arquivo
         ranking.txt, junto com a sua pontuação.
-        --------------------------
 */
 
 #define TAMANHO_PALAVRA 20
@@ -73,7 +67,7 @@ void chuta() {
     printf("Chute uma letra maiúscula:\n> ");
     scanf(" %c", &chute);
 
-    while (chute < 65 || chute > 90) {
+    while (chute < 65 || chute > 90) { // melhoria 1
         printf("Por favor, chute uma letra válida (maiúscula):\n> ");
         scanf(" %c", &chute);
     }
@@ -143,7 +137,7 @@ int chutesErrados() {
     return erros;
 }
 
-// melhoria 4 --------------------------
+// melhoria 4
 void escolhaDificuldade() {
     printf("Escolha a dificuldade:\n");
     printf("(1) Fácil   (2) Médio   (3) Difícil\n> ");
@@ -176,7 +170,7 @@ int ganhou() {
     return 1;
 }
 
-// melhoria 2 --------------------------
+// melhoria 2
 int verificarPalavrasIguais(char* palavra1, char* palavra2) {
     int saoIguais = 1;
     if (strlen(palavra1) == strlen(palavra2)) {
@@ -210,12 +204,12 @@ void adicionarPalavra() {
     printf("Desejas adicionar uma nova palavra (S ou N)?\n> ");
     scanf(" %c", &simOuNao);
 
-    while (simOuNao != 's' && simOuNao != 'n' && simOuNao != 'S' && simOuNao != 'N') {
+    while (simOuNao != 'S' && simOuNao != 'N') {
         printf("Por favor, digite S ou N:\n> ");
         scanf(" %c", &simOuNao);
     }
 
-    if (simOuNao == 's' || simOuNao == 'S') {
+    if (simOuNao == 'S') {
         char novaPalavra[TAMANHO_PALAVRA];
 
         printf("Digite a nova palavra:\n> ");
@@ -223,9 +217,9 @@ void adicionarPalavra() {
 
         for (int i = 0; i < strlen(novaPalavra); i++) {
             if (novaPalavra[i] < 65 || novaPalavra[i] > 90) {
-                printf("Por favor, difite a nova palavra apenas com letras maiúsculas:\n> ");
+                printf("Por favor, digite a nova palavra apenas com letras maiúsculas:\n> ");
                 scanf("%s", novaPalavra);
-                i = 0;
+                i = -1;
             }
         }
 
@@ -249,7 +243,7 @@ void adicionarPalavra() {
     }
 }
 
-// melhoria 5 --------------------------
+// melhoria 5
 int calcPontuacaoPlayer() {
     int pontuacao;
     pontuacao = (10 - chutesIncorretos) * dificuldade;
@@ -301,7 +295,7 @@ int main() {
         printf("         _.' '._        \n");
         printf("        '-------'       \n\n");
 
-        adicionarPalavra();
+        adicionarPalavra(); // melhoria 3
     } else {
         printf("\nInfelizmente, você foi enforcado\n\n");
 
