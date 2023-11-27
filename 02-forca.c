@@ -157,7 +157,7 @@ void adicionarPalavra() {
 int main() {
 
     abertura();
-    escolhePalavra(palavraSecreta);
+    escolhePalavra();
 
     do {
         desenhaForca();

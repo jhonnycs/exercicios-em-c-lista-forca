@@ -271,7 +271,7 @@ void insertPlayerRanking() {
 
 int main() {
     abertura();
-    escolhePalavra(palavraSecreta);
+    escolhePalavra();
     escolhaDificuldade();
 
     do {
