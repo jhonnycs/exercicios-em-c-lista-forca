@@ -106,6 +106,7 @@ int main() {
                 }
                 pontos = pontos - pontosPerdidos;
             }
+            tentativas--;
         } while (tentativas > 0 && !acertou);
         printf("\n");
         if (acertou) {
