@@ -253,7 +253,7 @@ int calcPontuacaoPlayer() {
 
 void insertPlayerRanking() {
     int pontuacao = calcPontuacaoPlayer();
-    char nomePlayer[TAM_MAX_NOME_PLAYER];
+    char nomePlayer[TAM_MAX_NOME_PLAYER-3];
 
     printf("Por favor, digite seu nome para inserirmos no ranking:\n> ");
     scanf("%s", nomePlayer);
@@ -267,6 +267,7 @@ void insertPlayerRanking() {
     fprintf(f, "%03d", pontuacao);
     fprintf(f, "%c", '\n');
     fclose(f);
+    printf("\nSua pontuação foi de %d pontos", pontuacao);
 }
 
 int main() {
