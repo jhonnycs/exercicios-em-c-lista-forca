@@ -7,13 +7,13 @@
 */
 
 void receberValor(int *num);
-void escreveTabuada(int num);
+void escreverTabuada(int num);
 
 int main() {
     int num;
 
     receberValor(&num);
-    escreveTabuada(num);
+    escreverTabuada(num);
 
     return 0;
 }
@@ -23,7 +23,7 @@ void receberValor(int *num) {
     scanf("%d", num);
 }
 
-void escreveTabuada(int num) {
+void escreverTabuada(int num) {
     FILE *f = fopen("tabuada.txt", "r+");
 
     if (!f) {
@@ -36,5 +36,5 @@ void escreveTabuada(int num) {
     }
 
     printf("Tabuada escrita no arquivo.\n");
-    fclose(f);    
+    fclose(f);
 }
