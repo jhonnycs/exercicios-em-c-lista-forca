@@ -24,7 +24,7 @@ void receberValor(int *num) {
     while (*num < 1) {
         printf("Por favor, digite um inteiro maior que 0:\n> ");
         scanf("%d", num);
-    }    
+    }
 }
 
 void verificarPrimo(int num) {
