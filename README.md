@@ -1,5 +1,6 @@
 # exercicios em c - lista jogo da forca
-Repositório para a lista 4 em C da disciplina Fundamentos da Programação<br>
+Repositório para a lista sobre o jogo da forca em C da<br>
+disciplina Fundamentos da Programação<br>
 IFCE Campus Maracanaú
 
 ## O que deve ser feito?
