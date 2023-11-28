@@ -1,4 +1,4 @@
-# exercicios-em-c-lista4
+# exercicios em c - lista jogo da forca
 Repositório para a lista 4 em C da disciplina Fundamentos da Programação<br>
 IFCE Campus Maracanaú
 
